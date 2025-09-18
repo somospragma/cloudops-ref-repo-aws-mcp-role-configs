@@ -3,7 +3,6 @@
 > Configuraciones optimizadas de servidores AWS MCP organizadas por roles profesionales para maximizar la productividad en entornos cloud.
 
 [![AWS](https://img.shields.io/badge/AWS-MCP%20Servers-orange?logo=amazon-aws)](https://awslabs.github.io/mcp/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## 📋 Tabla de Contenidos
