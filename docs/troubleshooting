@@ -1,0 +1,192 @@
+# Solución de Problemas MCP
+
+## 🚨 Problemas Comunes
+
+### 1. Servidor MCP no conecta
+
+**Síntomas**: 
+- Servidor aparece como "desconectado"
+- Tools no están disponibles
+- Error de timeout
+
+**Soluciones**:
+```bash
+# Verificar que uv esté instalado
+uv --version
+
+# Reinstalar uv si es necesario
+pip install uv
+
+# Verificar permisos del archivo de configuración
+chmod 644 ~/.aws/amazonq/mcp.json
+
+# Probar instalación manual del servidor
+uvx awslabs.aws-api-mcp-server@latest
+```
+
+### 2. Error de permisos AWS
+
+**Síntomas**:
+- "Access Denied" en operaciones AWS
+- Credenciales no válidas
+
+**Soluciones**:
+```bash
+# Verificar configuración AWS CLI
+aws configure list
+
+# Verificar credenciales
+aws sts get-caller-identity
+
+# Reconfigurar si es necesario
+aws configure
+```
+
+### 3. Timeout en conexión
+
+**Síntomas**:
+- Servidor tarda mucho en conectar
+- Timeout errors
+
+**Soluciones**:
+- Aumentar timeout en configuración:
+```json
+{
+  "mcpServers": {
+    "aws-api": {
+      "command": "uvx",
+      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "timeout": 120,
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    }
+  }
+}
+```
+
+### 4. Conflictos de versiones Python
+
+**Síntomas**:
+- Error al ejecutar `uvx`
+- Problemas de dependencias
+
+**Soluciones**:
+```bash
+# Verificar versión Python
+python3 --version
+
+# Actualizar uv
+pip install --upgrade uv
+
+# Limpiar caché uv
+uv cache clean
+```
+
+## 🔍 Diagnóstico
+
+### Verificar logs
+
+**VS Code/Amazon Q**:
+```bash
+# Logs globales
+tail -f ~/.aws/amazonq/logs/mcp.log
+
+# Logs locales
+tail -f .amazonq/logs/mcp.log
+```
+
+**Claude Desktop**:
+```bash
+# macOS
+tail -f ~/Library/Logs/Claude/mcp.log
+
+# Windows
+type %APPDATA%\Claude\Logs\mcp.log
+```
+
+### Probar servidor manualmente
+
+```bash
+# Probar servidor específico
+uvx awslabs.aws-api-mcp-server@latest
+
+# Con variables de entorno
+FASTMCP_LOG_LEVEL=DEBUG uvx awslabs.aws-api-mcp-server@latest
+```
+
+### Verificar conectividad de red
+
+```bash
+# Verificar acceso a PyPI
+curl -I https://pypi.org/
+
+# Verificar acceso a AWS
+aws sts get-caller-identity
+```
+
+## 🛠️ Configuración de Debug
+
+### Habilitar logs detallados
+
+```json
+{
+  "mcpServers": {
+    "aws-api": {
+      "command": "uvx",
+      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "DEBUG",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}
+```
+
+### Variables de entorno útiles
+
+```json
+{
+  "env": {
+    "FASTMCP_LOG_LEVEL": "DEBUG",
+    "AWS_DEFAULT_REGION": "us-east-1",
+    "AWS_PROFILE": "default",
+    "PYTHONUNBUFFERED": "1",
+    "UV_CACHE_DIR": "/tmp/uv-cache"
+  }
+}
+```
+
+## 📋 Checklist de Verificación
+
+### Antes de reportar un problema:
+
+- [ ] ✅ Python 3.8+ instalado
+- [ ] ✅ `uv` package manager instalado
+- [ ] ✅ AWS CLI configurado y funcionando
+- [ ] ✅ Archivo de configuración en ubicación correcta
+- [ ] ✅ Sintaxis JSON válida
+- [ ] ✅ Permisos de archivo correctos
+- [ ] ✅ Reiniciado el IDE/aplicación
+- [ ] ✅ Verificado logs de error
+- [ ] ✅ Probado servidor manualmente
+
+## 🆘 Obtener Ayuda
+
+### Información útil para reportar problemas:
+
+1. **Sistema operativo** y versión
+2. **IDE/aplicación** y versión
+3. **Versión de Python**: `python3 --version`
+4. **Versión de uv**: `uv --version`
+5. **Configuración AWS**: `aws configure list`
+6. **Archivo de configuración** (sin credenciales)
+7. **Logs de error** completos
+8. **Pasos para reproducir** el problema
+
+### Recursos adicionales:
+
+- [Documentación oficial MCP](https://awslabs.github.io/mcp/)
+- [AWS Q Developer Documentation](https://docs.aws.amazon.com/amazonq/)
+- [GitHub Issues](https://github.com/awslabs/mcp/issues)
