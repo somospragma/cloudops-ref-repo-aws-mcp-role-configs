@@ -1,0 +1,61 @@
+{
+  "mcpServers": {
+    "aws-api": {
+      "command": "uvx",
+      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "aws-knowledge": {
+      "command": "uvx",
+      "args": ["awslabs.aws-knowledge-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      }
+    },
+    "cloudwatch": {
+      "command": "uvx",
+      "args": ["awslabs.cloudwatch-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "cost-explorer": {
+      "command": "uvx",
+      "args": ["awslabs.cost-explorer-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "aws-support": {
+      "command": "uvx",
+      "args": ["awslabs.aws-support-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "cloudwatch-appsignals": {
+      "command": "uvx",
+      "args": ["awslabs.cloudwatch-appsignals-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "eks": {
+      "command": "uvx",
+      "args": ["awslabs.eks-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "ecs": {
+      "command": "uvx",
+      "args": ["awslabs.ecs-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    }
+  }
+}
