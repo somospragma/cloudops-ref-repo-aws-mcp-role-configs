@@ -73,8 +73,8 @@ aws-mcp-role-configs/
 
 ### Prerrequisitos
 
-- Cliente MCP compatible (Claude Desktop, Cursor, VS Code con extensión MCP, etc.)
-- Credenciales AWS configuradas
+- Amazon Q
+- Credenciales AWS Cli configuradas
 - Python 3.8+ (para algunos servidores locales)
 
 ### Uso Rápido
@@ -85,10 +85,10 @@ aws-mcp-role-configs/
    cd aws-mcp-role-configs
    ```
 
-2. **Selecciona tu rol y nivel:**
+2. **Selecciona tu rol:**
    ```bash
-   # Ejemplo para Arquitecto de Infraestructura - Nivel Estándar
-   cp configs/arquitecto-infraestructura/standard.json ~/.config/claude-desktop/
+   # Ejemplo para Arquitecto CloudOps
+   cp configs/arquitecto-infraestructura/mcp.json
    ```
 
 3. **Configura tu cliente MCP:**
@@ -101,32 +101,6 @@ aws-mcp-role-configs/
 
 Ver la carpeta `/examples/` para instrucciones específicas de cada cliente MCP.
 
-## ⚙️ Configuraciones por Rol
-
-### Niveles de Configuración
-
-| Nivel | Descripción | Servidores | Ideal para |
-|-------|-------------|------------|------------|
-| **Minimal** | Configuración básica esencial | 2-3 servidores | Principiantes, pruebas rápidas |
-| **Standard** | Configuración equilibrada | 4-6 servidores | Uso diario profesional |
-| **Advanced** | Configuración completa | 8+ servidores | Proyectos complejos, expertos |
-
-### Resumen por Rol
-
-#### 🏗️ Arquitecto de Infraestructura
-- **Minimal:** AWS Knowledge + AWS API + CDK
-- **Standard:** + Terraform + Pricing + Diagram
-- **Advanced:** + CloudFormation + Support + Cost Explorer
-
-#### 📊 CloudOps Engineer
-- **Minimal:** AWS Knowledge + AWS API + CloudWatch
-- **Standard:** + Cost Explorer + Support + Application Signals
-- **Advanced:** + EKS/ECS + Step Functions + Monitoring tools
-
-#### 🗄️ DBA Analyst
-- **Minimal:** AWS Knowledge + AWS API + DynamoDB
-- **Standard:** + Aurora (PostgreSQL/MySQL) + ElastiCache
-- **Advanced:** + DocumentDB + Redshift + Neptune + múltiples BD
 
 ## 💡 Ejemplos de Uso
 
