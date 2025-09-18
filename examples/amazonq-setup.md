@@ -1,14 +1,14 @@
-# Configuración MCP para Amazon Q Developer
+# Configuración MCP para Amazon Q CLI
 
 ## 📋 Prerrequisitos
-- Amazon Q Developer (VS Code, JetBrains, o CLI)
+- Amazon Q CLI (VS Code, JetBrains, o CLI)
 - Python 3.8+ y `uv` package manager
 - AWS CLI configurado
 
 ## 🔧 Configuración
 
 ### 1. Ubicación del archivo
-Amazon Q Developer busca la configuración en:
+Amazon Q busca la configuración en:
 - **Global**: `~/.aws/amazonq/mcp.json`
 - **Local**: `.amazonq/mcp.json` (en el directorio del proyecto)
 
@@ -21,7 +21,7 @@ mkdir -p ~/.aws/amazonq/
 # 2. Copiar configuración del rol deseado
 cp configs/[rol]/mcp.json ~/.aws/amazonq/mcp.json
 
-# 3. Reiniciar Amazon Q Developer
+# 3. Reiniciar Amazon Q
 ```
 
 ### 3. Instalación Local (Por Proyecto)
@@ -34,29 +34,29 @@ cp configs/[rol]/mcp.json .amazonq/mcp.json
 
 ## 🎯 Ejemplos por Rol
 
-### Arquitecto de Infraestructura
+### Arquitecto CloudOps
 ```bash
 # Configuración completa para arquitectos
 cp configs/arquitecto-infraestructura/mcp.json ~/.aws/amazonq/mcp.json
 ```
 
-### CloudOps Engineer
+### Analista CloudOps
 ```bash
 # Configuración completa para CloudOps
 cp configs/cloudops-engineer/mcp.json ~/.aws/amazonq/mcp.json
 ```
 
-### DBA Analyst
+### Analista DBA
 ```bash
 # Configuración completa para DBAs
 cp configs/dba-analyst/mcp.json ~/.aws/amazonq/mcp.json
 ```
 
 ## ✅ Verificación
-1. Reiniciar Amazon Q Developer
+1. Reiniciar Amazon Q CLI
 2. Abrir Amazon Q Chat
-3. Hacer clic en el ícono de herramientas
-4. Verificar que los servidores MCP estén conectados
+3. Ingresar `/tools`
+4. Verificar que los servidores MCP estén conectados y disponibles
 
 ## 🔧 Configuración Manual (UI)
 También puedes configurar desde la interfaz de Amazon Q:
