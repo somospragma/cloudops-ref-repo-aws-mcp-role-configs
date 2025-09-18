@@ -24,6 +24,25 @@ cp configs/[rol]/mcp.json ~/.aws/amazonq/mcp.json
 
 ## 📁 Estructura
 
+```
+aws-mcp-role-configs/
+├── README.md                    # Documentación principal
+├── configs/                     # Configuraciones por rol
+│   ├── arquitecto-cloudops/
+│   │   └── mcp.json            # Configuración completa para arquitectos
+│   ├── analista-cloudops/
+│   │   └── mcp.json            # Configuración completa para CloudOps
+│   └── analista-dba/
+│       └── mcp.json            # Configuración completa para DBAs
+├── examples/
+│   └── amazonq-setup.md        # Guía de configuración para Amazon Q Developer
+└── docs/                        # Documentación detallada
+    ├── server-descriptions.md   # Descripción de cada servidor MCP
+    └── troubleshooting.md       # Solución de problemas comunes
+```
+
+## 📁 Estructura
+
 - `configs/` - Configuraciones por rol (un archivo mcp.json por rol)
 - `examples/` - Guía de configuración para Amazon Q
 - `docs/` - Documentación detallada
