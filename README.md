@@ -54,27 +54,19 @@ Los servidores AWS MCP son un conjunto de herramientas especializadas que mejora
 aws-mcp-role-configs/
 ├── README.md
 ├── configs/
-│   ├── arquitecto-infraestructura/
-│   │   ├── minimal.json          # Configuración básica
-│   │   ├── standard.json         # Configuración estándar
-│   │   └── advanced.json         # Configuración completa
-│   ├── cloudops-engineer/
-│   │   ├── minimal.json
-│   │   ├── standard.json
-│   │   └── advanced.json
-│   └── dba-analyst/
-│       ├── minimal.json
-│       ├── standard.json
-│       └── advanced.json
+│   ├── arquitecto-cloudops/
+│   │   └── mcp.json         # Configuración completa
+│   ├── analista-cloudops/
+│   │   └── mcp.json 
+│   └── analista-dba/
+│       └── mcp.json 
 ├── examples/
 │   ├── claude-desktop-setup.md   # Configuración para Claude Desktop
 │   ├── cursor-setup.md          # Configuración para Cursor
 │   └── vscode-setup.md          # Configuración para VS Code
 ├── docs/
 │   ├── server-descriptions.md   # Descripción detallada de cada servidor
-│   ├── troubleshooting.md      # Solución de problemas comunes
-│   └── migration-guide.md      # Guía de migración entre configuraciones
-└── LICENSE
+└── └──  troubleshooting.md      # Solución de problemas comunes
 ```
 
 ## 🚀 Instalación y Uso
