@@ -1,6 +1,6 @@
-# AWS MCP Role Configurations para Amazon Q Developer
+# AWS MCP Role Configurations para Amazon Q
 
-Configuraciones optimizadas de servidores MCP para diferentes roles en AWS CloudOps, específicamente diseñadas para Amazon Q Developer.
+Configuraciones optimizadas de servidores MCP para diferentes roles en AWS CloudOps, específicamente diseñadas para Amazon Q.
 
 ## 🎯 Roles Disponibles
 
@@ -19,18 +19,18 @@ Servidores incluidos: AWS API, Knowledge, DynamoDB, Aurora (PostgreSQL/MySQL/DSQ
 # Copiar configuración del rol deseado
 cp configs/[rol]/mcp.json ~/.aws/amazonq/mcp.json
 
-# Reiniciar Amazon Q Developer
+# Reiniciar Amazon Q
 ```
 
 ## 📁 Estructura
 
 - `configs/` - Configuraciones por rol (un archivo mcp.json por rol)
-- `examples/` - Guía de configuración para Amazon Q Developer
+- `examples/` - Guía de configuración para Amazon Q
 - `docs/` - Documentación detallada
 
 ## 📖 Documentación
 
-- [Configuración Amazon Q Developer](examples/amazonq-setup.md)
+- [Configuración Amazon Q](examples/amazonq-setup.md)
 - [Descripción de Servidores](docs/server-descriptions.md)
 - [Solución de Problemas](docs/troubleshooting.md)
 - [Guía de Migración](docs/migration-guide.md)
